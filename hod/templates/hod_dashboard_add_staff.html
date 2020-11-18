@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Add Subject
+{% endblock %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/hod_dashboard_add_sub_course.css' %}">
+
+    <div class="add-subject">
+        <h1>Staff Registration</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="id_username"></label><input
+                class="add-sub-input"
+                name="username"
+                type="email"
+                maxlength="150"
+                autocomplete="off"
+                required
+                placeholder="Email"
+                id="id_username">
+            <label for="id_password1"></label
+            ><input
+                class="add-sub-input"
+                type="password"
+                name="password1"
+                autocomplete="off"
+                required
+                placeholder="Password"
+                id="id_password1"
+        >
+            <label for="id_password2"></label>
+            <input
+                    class="add-sub-input"
+                    type="password"
+                    name="password2"
+                    autocomplete="off"
+                    required
+                    placeholder="Password Confirmation"
+                    id="id_password2">
+            <select
+                    hidden
+                    name="user_roles"
+                    class="add-sub-input"
+                    id="id_user_roles">
+                <option value="">User Roles</option>
+                <option value="hod">HOD</option>
+
+                <option value="staff" selected>STAFF</option>
+
+                <option value="student">STUDENT</option>
+
+            </select>
+            {% for foo in staff_form %}
+                <span class="error">{{ foo.errors }}</span>
+            {% endfor %}
+            <input type="submit" value="Add Staff" class="add-btn">
+
+
+        </form>
+    </div>
+{% endblock %}

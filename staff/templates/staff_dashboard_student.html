@@ -1,0 +1,29 @@
+{% extends 'staff_base.html' %}
+
+
+{% block content %}
+    <div class="section2">
+        <div class="spl-link">
+            <a href="#link" class="spl-links link">Add Student</a>
+            <a href="#link" class="spl-links link">Update Student</a>
+            <a href="#link" class="spl-links link">Add Guardian</a>
+        </div>
+        <section>
+            <div class="card">
+                <h2 class="card-head">total students</h2>
+                <div class="count">{{ student.count }}</div>
+                <a href="#link" class="link card-link">See More...</a>
+            </div>
+            <div class="card">
+                <h2 class="card-head">students on leave({% now 'j-m-y' %})</h2>
+                <div class="count">{{ student_leave.count }}</div>
+                <a href="#link" class="link card-link">See More...</a>
+            </div>
+            <div class="card">
+                <h2 class="card-head">Students Attendance</h2>
+                <div class="count">{{ student_attendance.count }}</div>
+                <a href="#link" class="link card-link">See More...</a>
+            </div>
+        </section>
+    </div>
+{% endblock %}

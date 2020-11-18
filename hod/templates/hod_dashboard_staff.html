@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Staffs
+{% endblock %}
+{% block content %}
+
+
+    <div class="content-staff">
+        <div class="staff-card">
+            <h2>Total Staffs</h2>
+            <div class="staff-card-count">{{ staff.count }}</div>
+            <hr/>
+            <a href="{% url 'staff-details' %}" class="link">See More...</a>
+        </div>
+
+        <div class="staff-card">
+            <h2>Staffs on Leave</h2>
+            <div class="staff-card-count">{{ staff_leave.count }}</div>
+            <hr/>
+            <a href="#seemore" class="link">See More...</a>
+        </div>
+
+        <div class="staff-card">
+            <h2>Staff Attendance</h2>
+            <div class="staff-card-count">{{ staff_attendance.count }}</div>
+            <hr/>
+            <a href="#seemore" class="link">See More...</a>
+        </div>
+    </div>
+{% endblock %}

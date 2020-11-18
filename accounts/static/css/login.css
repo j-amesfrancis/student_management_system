@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+}
+
+::-moz-selection {
+    background: #a09cf0;
+    color: white;
+}
+
+::selection {
+    background: #a09cf0;
+    color: white;
+}
+
+body {
+    background-image: url("../img/shade.svg");
+    background-size: cover;
+}
+
+main {
+    height: 100vh;
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+}
+
+.image {
+    max-height: 100%;
+    max-width: 30%;
+    margin-top: auto;
+}
+
+svg {
+    width: 100%;
+}
+
+.form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.form-area {
+    min-height: 80vh;
+    max-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.input {
+    padding: 5px 0px;
+    border: none;
+    border-bottom: 3px solid #6661c4;
+    border-radius: 2px;
+    margin: 50px;
+    font-size: 20px;
+    color: #424242;
+    background: transparent;
+}
+
+.login-text {
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.login-btn {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+    background: #6c63ff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    -webkit-box-shadow: 3px 2px 5px 0 #858181;
+    box-shadow: 3px 2px 5px 0 #858181;
+}
+
+.login-btn:hover {
+    background: #827cff;
+}
+
+.error {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background: transparent;
+    color: red;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+@media screen and (max-width: 575px) {
+    .input {
+        width: 90%;
+        font-size: 15px;
+    }
+
+    .image {
+        display: none;
+    }
+}
+
+/*# sourceMappingURL=login.css.map */

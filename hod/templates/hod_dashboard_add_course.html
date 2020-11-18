@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Add Course
+{% endblock %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/hod_dashboard_add_sub_course.css' %}">
+
+    <div class="add-subject">
+        <h1>Add Course</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="id_name"></label><input value="{{ course_instance }}" type="text"
+                                                class="add-sub-input"
+                                                name="name"
+                                                maxlength="50"
+                                                required
+                                                id="id_name"
+                                                autocomplete="off"
+                                                placeholder="Course Name">
+            <label for="id_code_name"></label><input value="{{ course_instance.code_name }}"
+                                                     type="text" placeholder="Code Name"
+                                                     class="add-sub-input" name="code_name"
+                                                     maxlength="10"
+                                                     required
+                                                     autocomplete="off"
+                                                     id="id_code_name">
+            {% for foo in course_form %}
+                <span class="error">{{ foo.errors }}</span>
+            {% endfor %}
+            <input type="submit" value="Add" class="add-btn">
+
+
+        </form>
+    </div>
+{% endblock %}

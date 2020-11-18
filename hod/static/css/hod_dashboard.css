@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.main {
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.navbar {
+    height: 100vh;
+    width: 15rem;
+    background: #2d2d2d;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 10px;
+}
+
+.dashboard-text {
+    color: #f8f8f8;
+    text-align: center;
+    font-size: 30px;
+    padding: 5px;
+    width: 100%;
+    font-weight: bold;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    letter-spacing: 5px;
+    pointer-events: none;
+}
+
+.nav-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    height: 80vh;
+    overflow-y: scroll;
+}
+
+.nav-items {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    border-radius: 5px;
+    width: 90%;
+    padding: 10px;
+    text-align: center;
+}
+
+.nav-items:hover {
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background: rgba(60, 61, 58, 0.699);
+}
+
+.section-two {
+    height: 100vh;
+    width: 100%;
+}
+
+.section-two-navbar {
+    width: 100%;
+}
+
+.profile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.image {
+    width: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.profile-popup {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5px;
+    -webkit-box-shadow: 2px 2px 3px 2px rgba(102, 96, 96, 0.308);
+    box-shadow: 2px 2px 3px 2px rgba(102, 96, 96, 0.308);
+    top: 50px;
+    right: 50px;
+}
+
+.profile-popup hr {
+    width: 90%;
+    background: #4e4a4a;
+}
+
+.profile-popup a {
+    margin: 5px;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    color: #302d2d;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.profile-popup :hover {
+    background: rgba(206, 206, 206, 0.459);
+}
+
+.profile-popup-hide {
+    display: none;
+}
+
+.content {
+    width: 100%;
+    height: 90vh;
+    overflow-y: scroll;
+    background: white;
+}
+
+.loader {
+    height: 100vh;
+    width: 100%;
+    background: rgba(255, 255, 255, 0);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.loader-hidden {
+    display: none;
+}
+
+.charts {
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 553px);
+}
+
+hr {
+    width: 100%;
+}
+
+.staff_leave,
+.student_leaves {
+    width: 100%;
+    height: 100%;
+}
+

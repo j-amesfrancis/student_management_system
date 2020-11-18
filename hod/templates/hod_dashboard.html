@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}
+    Dashboard
+{% endblock %}
+{% block content %}
+
+    <div class="charts">
+        <div class="staff_leave">
+            <h2 style="text-align: center;margin: 10px">Courses</h2>
+            <canvas id="staff_leaves"></canvas>
+        </div>
+        {#        <div class="student_leaves">#}
+        {#            <h2>Student Leaves</h2>#}
+        {#            <canvas id="student_leaves"></canvas>#}
+        {#        </div>#}
+    </div>
+    <!-- <hr /> -->
+
+    <script>
+
+        function chart() {
+            const ctx1 = document.getElementById('staff_leaves').getContext('2d');
+            const student_leaves = new Chart(ctx1, {
+                type: 'doughnut',
+                data: {
+                    labels: [{% for i in course %}
+                        '{{ i.code_name }}',
+                    {% endfor %}
+                    ],
+                    datasets: [{
+                        label: 'Course Overview',
+                        data: [{% for i in course %}
+                            '{{ i.student_set.count }}',
+                        {% endfor %}
+                        ],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderColor: 'transparent',
+                        borderWidth: 3,
+                        hoverBorderWidth: 4,
+                        hoverBackgroundColor: [
+                            'rgba(255, 99, 132, .9)',
+                            'rgba(54, 162, 235, .9)',
+                            'rgba(255, 206, 86, .9)',
+                            'rgba(75, 192, 192, .9)',
+                            'rgba(153, 102, 255, .9)',
+                            'rgba(255, 159, 64, .9)'
+                        ],
+                    }]
+                },
+
+            });
+        }
+
+        chart()
+
+    </script>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'staff_base.html' %}
+
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/staff_dashboard_guardian.css' %}">
+    <div class="section">
+
+        <table>
+            <thead class="head">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Student</th>
+                <th colspan="2">Edit</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for g in guardian %}
+                <tr>
+                    <td>{{ g.guardian_name }}</td>
+                    <td>{{ g.guardian_email }}</td>
+                    <td>{{ g.mobile_number }}</td>
+                    <td>{{ g.student }}</td>
+                    <td><a href="#update" class="link update">Update</a></td>
+                    <td><a href="#link" class="link delete">Delete</a></td>
+                </tr>
+            {% endfor %}
+
+
+            </tbody>
+        </table>
+
+
+    </div>
+    <script>
+        $('#student').removeClass('active-nav-link')
+        $('#guardian').addClass('active-nav-link')
+    </script>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Subjects
+{% endblock %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/hod_dashboard_course.css' %}">
+
+    <a href="{% url 'add-subject' %}" class="add-icon link">
+        <img src="{% static 'img/plus.svg' %}" alt="">
+    </a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Subject Name</th>
+            <th>Subject Staff</th>
+            <th colspan="2">Edit</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for sub in subject %}
+            <tr>
+                <td>{{ sub }}</td>
+                <td>{% for foo in sub.staff_set.all %}
+                    {{ foo }}<br>
+                {% endfor %}
+                </td>
+                <td><a href="{% url 'update-subject' sub.id %}"
+                       class="link update-btn">Update</a></td>
+                <td><a href="{% url 'delete-subject' sub.id %}"
+                       class="link delete-btn">Delete</a></td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+{% endblock %}

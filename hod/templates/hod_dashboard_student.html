@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} Students
+{% endblock %}
+{% block content %}
+
+
+    <div class="content-staff">
+        <div class="staff-card">
+            <h2>Total Student</h2>
+            <div class="staff-card-count">{{ student.count }}</div>
+            <hr/>
+            <a href="#seemore" class="link">See More...</a>
+        </div>
+
+        <div class="staff-card">
+            <h2>Students on Leave</h2>
+            <div class="staff-card-count">{{ student_leave.count }}</div>
+            <hr/>
+            <a href="#seemore" class="link">See More...</a>
+        </div>
+
+        <div class="staff-card">
+            <h2>Students Attendance</h2>
+            <div class="staff-card-count">{{ student_attendance.count }}</div>
+            <hr/>
+            <a href="#seemore" class="link">See More...</a>
+        </div>
+    </div>
+{% endblock %}

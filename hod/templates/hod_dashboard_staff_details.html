@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Staff Details
+{% endblock %}
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'css/hod_dashboard_course.css' %}">
+    <a href="{% url 'add-staff' %}" class="add-icon">
+        <img src="{% static 'img/plus.svg' %}" alt="">
+    </a>
+    <h1 style="text-align: center;text-transform: uppercase">Staff Details</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Profile Picture</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Class Coordinator</th>
+            <th colspan="2">Edit</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for staff in staff_list %}
+            <tr>
+                <td>
+                    {% if staff.profile_pic %}
+                        <img src="{{ staff.profile_pic.url }}" class="profile-pic">
+                    {% else %}
+                        <img src="{% static 'img/user.svg' %}" class="profile-pic">
+                    {% endif %}
+                </td>
+                <td>{{ staff.get_full_name }}</td>
+                <td>{{ staff.email }}</td>
+                <td>{{ staff.subject }}</td>
+                <td>{% if staff.class_coordinator %}
+                    <img src="{% static 'admin/img/icon-yes.svg' %}" class="yes-no">
+                {% else %}
+                    <img src="{% static 'admin/img/icon-no.svg' %}" class="yes-no">
+                {% endif %}</td>
+                <td><a href="{% url 'staff-update' staff.id %}"
+                       class="link update-btn">Update</a></td>
+                <td><a href="{% url 'staff-delete' staff.id %}"
+                       class="link delete-btn">Delete</a></td>
+            </tr>
+        {% endfor %}
+
+
+        </tbody>
+    </table>
+{% endblock %}

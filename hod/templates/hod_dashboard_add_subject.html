@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Add Subject
+{% endblock %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/hod_dashboard_add_sub_course.css' %}">
+
+    <div class="add-subject">
+        {% if subject_instance %}
+            <h1>Update Subject({{ subject_instance }})</h1>
+        {% else %}
+            <h1>Add Subject</h1>
+        {% endif %}
+
+
+        <form method="post">
+            {% csrf_token %}
+            <label for="id_name"></label>
+            <input type="text"
+                   class="add-sub-input"
+                   autocomplete="off"
+                   name="name"
+                   maxlength="50"
+                   required
+                   id="id_name"
+                   value="{{ subject_instance }}"
+                   placeholder="Subject Name">
+
+            {% if subject_instance %}
+                <input type="submit" value="Update" class="add-btn">
+            {% else %}
+                <input type="submit" value="Add" class="add-btn">
+            {% endif %}
+            {% for foo in subject_form %}
+                <span class="error">{{ foo.errors }}</span>
+            {% endfor %}
+
+        </form>
+    </div>
+{% endblock %}

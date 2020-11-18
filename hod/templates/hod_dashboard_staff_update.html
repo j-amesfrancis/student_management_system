@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Update Staff
+{% endblock %}
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'css/hod_dashboard_add_sub_course.css' %}">
+    <style>
+        li {
+            list-style-type: none;
+        }
+    </style>
+    <form method="post" enctype="multipart/form-data">
+        <h1 style="text-align: center">Update Staff</h1>
+        {% csrf_token %}
+        <li>
+            <input
+                    name="first_name"
+                    value="{{ staff_instance.first_name }}"
+                    maxlength="100"
+                    id="id_first_name"
+                    class="add-sub-input"
+                    autocomplete="off">
+        </li>
+        <li>
+            <input
+                    name="last_name"
+                    value="{{ staff_instance.last_name }}"
+                    maxlength="100"
+                    id="id_last_name"
+                    class="add-sub-input"
+                    autocomplete="off"
+            >
+        </li>
+        <li>
+            <label for="id_class_coordinator" class="add-sub-input">Class coordinator:</label>
+            {% if staff_instance.is_class_coordinator %}
+                <input
+                        style="width: 20px;height: 20px"
+                        type="checkbox"
+                        name="class_coordinator"
+                        id="id_class_coordinator" checked>
+            {% else %}
+                <input
+                        style="width: 20px;height: 20px"
+                        type="checkbox"
+                        name="class_coordinator"
+                        id="id_class_coordinator">
+               
+            {% endif %}
+        </li>
+
+
+        <input
+                type="file"
+                name="profile_pic"
+                accept="image/*"
+                id="id_profile_pic"
+                class="add-sub-input">
+
+        <span class="add-sub">Current Image:
+            <a
+                    href="{{ staff_instance.profile_pic.url }}"
+                    target="_blank"
+            ><img
+                    src="{{ staff_instance.profile_pic.url }}"
+                    class="update-img"
+                    alt="Staff Profile Picture"
+            ></a>
+        </span>
+
+        <label for="id_subject"></label>
+        <select
+                name="subject"
+                required id="id_subject"
+                class="add-sub-input">
+            <option value="">Select Subject</option>
+            {% for foo in subject %}
+
+                {% if staff_instance.subject == foo %}
+                    <option value="{{ foo.id }}" selected> {{ foo }}</option>
+                {% else %}
+                    <option value="{{ foo.id }}"> {{ foo }}</option>
+                {% endif %}
+            {% endfor %}
+
+
+        </select>
+        <input
+                type="submit"
+                value="Update {{ staff_instance.first_name }}"
+                class="add-btn"
+        >
+    </form>
+{% endblock %}

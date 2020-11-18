@@ -1,0 +1,71 @@
+.section {
+    height: 89vh;
+    width: 100%;
+}
+
+table {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #3d3b3b;
+    color: white;
+}
+
+th,
+td {
+    height: 50px;
+}
+
+tr {
+    border-radius: 5px;
+}
+
+tr:nth-child(even) {
+    background: white;
+}
+
+tr:nth-child(even) {
+    background: #dadada;
+}
+
+thead tr:hover:nth-child(1) {
+    background: #3d3b3b;
+}
+
+tr:hover {
+    -webkit-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    background: rgba(218, 218, 218, 0.26);
+}
+
+.update {
+    background: #6c63ff;
+    padding: 8px 20px;
+    border-radius: 5px;
+    color: white;
+}
+
+.delete {
+    background: #ff1e1e;
+    padding: 8px 20px;
+    border-radius: 5px;
+    color: white;
+}
+
+.update:focus {
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    -webkit-box-shadow: 0 0 0 4px rgba(107, 99, 255, 0.733);
+    box-shadow: 0 0 0 4px rgba(107, 99, 255, 0.733);
+}
+
+.delete:focus {
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    -webkit-box-shadow: 0 0 0 4px rgba(255, 30, 30, 0.733);
+    box-shadow: 0 0 0 4px rgba(255, 30, 30, 0.733);
+}

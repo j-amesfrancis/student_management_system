@@ -1,0 +1,53 @@
+
+.content-staff {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 450px);
+    grid-row-gap: 50px;
+    grid-column-gap: 50px;
+    margin: 5%;
+}
+
+.staff-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    min-height: 200px;
+    background: rgb(130, 124, 255);
+    -webkit-box-shadow: 3px 3px 5px 2px #797474;
+    box-shadow: 3px 3px 5px 2px #797474;
+    border-radius: 5px;
+}
+
+.staff-card h2 {
+    font-size: 30px;
+    color: #291d1d;
+}
+
+.staff-card .staff-card-count {
+    font-size: 50px;
+}
+
+.staff-card a {
+    font-size: 20px;
+    color: white;
+}
+
+.staff-card a:hover {
+    color: cyan;
+}
+
+.staff-card hr {
+    width: 100%;
+    border: 1px solid rgb(255, 255, 255);
+}
+
