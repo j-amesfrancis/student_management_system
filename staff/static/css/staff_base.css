@@ -189,6 +189,7 @@ nav .nav-link div {
     -ms-flex-align: center;
     align-items: center;
     justify-content: space-evenly;
+    height: 100vh;
 }
 
 .spl-link {
@@ -307,7 +308,7 @@ td {
 }
 
 tr {
-    border-radius: 5px;
+
 }
 
 tr:nth-child(even) {

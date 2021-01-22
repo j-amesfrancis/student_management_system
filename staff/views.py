@@ -30,3 +30,16 @@ def staff_guardian(request):
         'guardian': guardian
     }
     return render(request, 'staff_dashboard_guardian.html', context)
+
+
+def total_students(request):
+    student_list = Student.objects.all()
+
+    context = {
+        'student_list': student_list,
+    }
+    return render(request, 'staff_dashboard_total_students.html', context)
+
+
+def add_student(request):
+    return render(request, 'staff_dashboard_add_students.html')

@@ -86,6 +86,11 @@ class Student(models.Model):
             return str(self.first_name + ' ' + self.last_name)
         return self.email
 
+    def get_full_name(self):
+        if self.first_name and self.last_name:
+            return str(self.first_name + ' ' + self.last_name)
+        return self.email
+
 
 class StudentLeave(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
